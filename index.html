@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliding Pages</title>
+   
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden; 
+        }
+
+        /* Navigation Styles */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            z-index: 10; 
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* Page Container */
+        .pages {
+            display: flex;
+            transition: transform 0.8s ease-in-out; 
+            width: 300vw; 
+        }
+
+        /* Individual Page Styles */
+        .page {
+            min-width: 100vw; 
+            height: 100vh; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative; 
+            background-size: cover;
+            background-position: center;
+        }
+
+        #page2 {
+            background-image: url('pic1.png'); 
+        }
+
+        #page3 {
+            background-image: url('pic1.png'); 
+        }
+
+        /* Cloud container */
+        .cloud-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        /* Cloud box styles */
+        .cloud-box {
+            width: 45%; 
+            height: 250px;
+            background-color: whitesmoke;
+            position: relative;
+            perspective: 1000px;
+            margin: 20px 0;
+            cursor: pointer;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform-style: preserve-3d;
+        }
+
+        .content back a {
+            display: block; 
+            margin-bottom: 10px; 
+        }
+
+        /* Square shape */
+        .cloud-box {
+            border-radius: 0; 
+        }
+
+        /* Cloud content */
+        .cloud-box .content {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.6s;
+            font-size: 24px;
+            color: white;
+            padding: 15px;
+            overflow: hidden;
+        }
+
+        .cloud-box .front {
+            background-color: rgb(174, 187, 201);
+        }
+
+        .cloud-box .back {
+            background-color: gray;
+            transform: rotateY(180deg);
+        }
+
+        .cloud-box:hover .front {
+            transform: rotateY(180deg);
+        }
+
+        .cloud-box:hover .back {
+            transform: rotateY(360deg);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#page1" data-index="0">Page 1</a></li>
+            <li><a href="#page2" data-index="1">Page 2</a></li>
+            <li><a href="#page3" data-index="2">Page 3</a></li>
+        </ul>
+    </nav>
+    
+
+    <!-- Pages -->
+    <div class="pages">
+        <section id="page1" class="page"> 
+            <video id="video1" controls="false" autoplay="autoplay" preload="auto">
+                <source src="6 (1).mp4" type="video/mp4">
+            </video>
+        </section>
+        
+        <section id="page2" class="page">
+            <div class="cloud-container">
+                <div class="cloud-box">
+                    <div class="content front">About Me</div>
+                    <div class="content back">"I am a driven third-year engineering student with a fervent passion for technology and innovation, specializing in full-stack development and AI. My goal is to craft impactful solutions that address real-world challenges, thriving in collaborative environments."                    </div>
+                </div>
+                <div class="cloud-box">
+                    <div class="content front">Education Qualification</div>
+                    <div class="content back">10th Sacred Heart Girl's Higher Secondary School (2020) -
+                        77%<br>12th Sacred Heart Girl's Higher Secondary School (2022) -
+                        83%<br>B.Tech
+                        KIT-Kalaignarkarunanidhi Institute Of Technology
+                        2026
+                        (CURRENT) - 
+                        9.1%</div>
+                </div>
+                <div class="cloud-box">
+                    <div class="content front">Skills</div>
+                    <div class="content back">Programming Languages: C, Python, Java(Basic)<br>Web Development: HTML, CSS, JavaScript, Basics of React, Node.js, Express, MongoDB.<br>AI & Machine Learning: Basics of OpenCV.
+                    </div>
+                </div>
+                <div class="cloud-box">
+                    <div class="content front">Projects</div>
+                    <div class="content back">Hardware: IOT Based Automated Smart Garbage Sorting Machine<br>Software: File Sharing App</div>
+                </div>
+            </div>
+        </section>
+        <section id="page3" class="page">
+            <div class="cloud-container">
+                <!-- Certification -->
+                <div class="cloud-box">
+                    <div class="content front">Certifications</div>
+                    <div class="content back">
+                        NPTEL - Introduction to DBMS<br>
+                        ALTAIR - Product & Use Cases Master Certification<br>
+                        INFOSYS Springboard Certification on Project Management, Programming in C, TechA Salesforce, Managerial Leadership Training<br>
+                        TCS - 1 and COURSERA - 5 certifications<br>
+                    </div>
+                </div>
+        
+                <!-- Contact Info -->
+                <div class="cloud-box">
+                    <div class="content front">Contact Info</div>
+                    <div class="content back">
+                        GitHub: <a href="https://github.com/gopikamuruganandam" target="_blank">github</a>
+                        LinkedIn: <a href="https://www.linkedin.com/in/gopika-m-315383265/" target="_blank">linkedin</a>
+                        StopStalk: <a href="https://www.stopstalk.com/user/profile/gopika_0204" target="_blank">stopstalk</a>
+                    </div>                     
+                </div>
+            </div>
+        </section>
+        
+    </div>
+
+    <script>
+        const pages = document.querySelector('.pages');
+        const totalPages = document.querySelectorAll('.page').length;
+        let currentIndex = 0;
+        const video = document.getElementById('video1');
+        let autoMoveTimeout;
+        let page1AutoMoved = false;
+
+        function showPage(index) {
+            currentIndex = index;
+            pages.style.transform = `translateX(-${currentIndex * 100}vw)`;
+
+            // Handle video playback
+            if (currentIndex === 0) {
+                video.currentTime = 0; 
+                video.play(); 
+                video.playbackRate = 1; 
+            } else {
+                video.pause(); 
+            }
+        }
+
+        function showNextPage() {
+            const nextIndex = (currentIndex + 1) % totalPages;
+            showPage(nextIndex);
+        }
+
+        function handleVideoEnd() {
+            showNextPage();
+        }
+
+        function startAutoMove() {
+            autoMoveTimeout = setTimeout(() => {
+                if (!page1AutoMoved) {
+                    showNextPage(); 
+                    page1AutoMoved = true; 
+                }
+            }, 30000); 
+        }
+
+        // Move to the next page when the video ends
+        video.addEventListener('ended', handleVideoEnd);
+
+        // Handle navigation link clicks
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetIndex = parseInt(this.getAttribute('data-index'), 10);
+                showPage(targetIndex);
+                if (targetIndex == 0) {
+                    startAutoMove();
+                    page1AutoMoved = true;
+                }
+            });
+        });
+
+        // Initialize by showing the first page
+        showPage(0);
+        startAutoMove();
+    </script>
+    
+</body>
+</html>
