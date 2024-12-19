@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sliding Pages</title>
    
     <style>
-        /* Basic Reset */
         * {
             margin: 0;
             padding: 0;
@@ -17,8 +15,6 @@
             font-family: Arial, sans-serif;
             overflow-x: hidden; 
         }
-
-        /* Navigation Styles */
         nav {
             position: fixed;
             top: 0;
@@ -47,14 +43,11 @@
             font-size: 18px;
         }
 
-        /* Page Container */
         .pages {
             display: flex;
             transition: transform 0.8s ease-in-out; 
             width: 300vw; 
         }
-
-        /* Individual Page Styles */
         .page {
             min-width: 100vw; 
             height: 100vh; 
@@ -73,8 +66,6 @@
         #page3 {
             background-image: url('pic1.png'); 
         }
-
-        /* Cloud container */
         .cloud-container {
             display: flex;
             flex-wrap: wrap;
@@ -83,8 +74,6 @@
             width: 90%;
             margin: 0 auto;
         }
-
-        /* Cloud box styles */
         .cloud-box {
             width: 45%; 
             height: 250px;
@@ -105,12 +94,9 @@
             margin-bottom: 10px; 
         }
 
-        /* Square shape */
         .cloud-box {
             border-radius: 0; 
         }
-
-        /* Cloud content */
         .cloud-box .content {
             width: 100%;
             height: 100%;
@@ -146,8 +132,6 @@
     </style>
 </head>
 <body>
-
-    <!-- Navigation -->
     <nav>
         <ul>
             <li><a href="#page1" data-index="0">Page 1</a></li>
@@ -155,9 +139,6 @@
             <li><a href="#page3" data-index="2">Page 3</a></li>
         </ul>
     </nav>
-    
-
-    <!-- Pages -->
     <div class="pages">
         <section id="page1" class="page"> 
             <video id="video1" controls="false" autoplay="autoplay" preload="auto">
